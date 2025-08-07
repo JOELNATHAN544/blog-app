@@ -12,7 +12,7 @@ jobs:
   rust-ci:
     runs-on: ubuntu-latest
 
-    teps:
+    steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
