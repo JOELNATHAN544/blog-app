@@ -1,0 +1,18 @@
+[
+  {
+    "slug": "hello-world",
+    "title": "Hello World",
+    "author": "admin",
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-01-01T00:00:00Z",
+    "content": "# Hello World\n\nWelcome to our blog! This is our first post.\n\n## Features\n\n- Markdown support\n- HTMX integration\n- Keycloak authentication\n\nStay tuned for more posts!"
+  },
+  {
+    "slug": "another-post",
+    "title": "Another Post",
+    "author": "admin",
+    "created_at": "2024-01-02T00:00:00Z",
+    "updated_at": "2024-01-02T00:00:00Z",
+    "content": "# Another Post\n\nThis is another blog post to demonstrate the system.\n\n## Code Example\n\n```rust\nfn main() {\n    println!(\"Hello, Rust!\");\n}\n```\n\nPretty cool, right?"
+  }
+]
