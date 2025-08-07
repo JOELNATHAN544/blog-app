@@ -38,16 +38,34 @@ services:
     networks:
       - oauth-network
 
+  keycloak-config-cli:
+    image: adorsys/keycloak-config-cli:latest
+    container_name: keycloak-config-cli
+    environment:
+      KEYCLOAK_URL: http://${KEYCLOAK_CONTAINER_NAME}:8080
+      KEYCLOAK_USER: ${KEYCLOAK_ADMIN}
+      KEYCLOAK_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+      IMPORT_PATH: /config
+    volumes:
+      - ./keycloak-config:/config  # Put your realm/client/role YAML here
+    depends_on:
+      - keycloak
+    networks:
+      - oauth-network
+
   blog-service:
     image: ${BLOG_SERVICE_IMAGE}
     container_name: ${BLOG_CONTAINER_NAME}
     environment:
       RUST_LOG: info
       KEYCLOAK_URL: http://${KEYCLOAK_CONTAINER_NAME}:8080
+      JWT_ISSUER: http://${KEYCLOAK_CONTAINER_NAME}:8080/realms/blog-realm
+      JWKS_URL: http://${KEYCLOAK_CONTAINER_NAME}:8080/realms/blog-realm/protocol/openid-connect/certs
     expose:
       - "${BLOG_SERVICE_PORT}"
     depends_on:
       - keycloak
+      - keycloak-config-cli
     networks:
       - oauth-network
 
