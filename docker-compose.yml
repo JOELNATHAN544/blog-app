@@ -45,9 +45,8 @@ services:
       KEYCLOAK_URL: http://${KEYCLOAK_CONTAINER_NAME}:8080
       KEYCLOAK_USER: ${KEYCLOAK_ADMIN}
       KEYCLOAK_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
-      IMPORT_PATH: /config
     volumes:
-      - ./keycloak-config:/config  # Put your realm/client/role YAML here
+      - ./keycloak-config:/config
     depends_on:
       - keycloak
     networks:
