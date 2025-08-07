@@ -27,7 +27,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./docker/Dockerfile.backend
           push: true
           tags: |
             ghcr.io/nkwenti-severian-ndongtsop/blog-api:latest
