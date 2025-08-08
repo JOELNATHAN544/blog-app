@@ -25,3 +25,5 @@ pub fn read_and_render_markdown(slug: &str) -> Result<String> {
     let html_content = markdown_to_html(&markdown_content);
     Ok(html_content)
 }
+
+
