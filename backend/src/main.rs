@@ -1,3 +1,3 @@
 fn main() {
-    println!("Hellow World From Rust!");
+    println!("Hellow World!");
 }
