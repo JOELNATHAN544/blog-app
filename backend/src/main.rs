@@ -6,6 +6,7 @@ use axum::{
     http::Method,
     middleware,
 };
+
 use serde_json::json;
 use std::net::SocketAddr;
 use tower_http::cors::{CorsLayer, Any};
